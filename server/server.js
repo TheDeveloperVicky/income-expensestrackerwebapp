@@ -22,7 +22,7 @@ app.use("/api/v1/accounts", accountRoute);
 //transactions route
 app.use("/api/v1/transactions", transactionsRoute);
 
-if (process.env.NODE_ENV === 'production') {
+
 
     app.use(express.static(path.join(__dirname,'../client/build')));
 
@@ -30,7 +30,7 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(
         path.resolve(__dirname, '../' , 'client' , 'build' , 'index.html')
     ));
-}
+
 
 //Error handlers
 app.use(globalErrHandler);
